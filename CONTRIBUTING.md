@@ -1,51 +1,47 @@
 # Contributing to OpenChamber
 
-## Development
+## Development Setup
 
+1. Install Node.js >= 20.0.0
+2. Clone the repository
+3. Run `npm install`
+4. Start development with `npm run dev`
+
+## Project Structure
+
+- `packages/server/` - NestJS backend
+- `packages/pwa/` - Vue PWA frontend
+
+## Testing
+
+All code must have tests:
+
+- Server: Jest for unit and integration tests
+- PWA: Vitest for component tests
+
+Run tests with:
 ```bash
-git clone https://github.com/btriapitsyn/openchamber.git
-cd openchamber
-bun install
-
-# Web development
-bun run dev:web:full
-
-# Desktop app (Tauri)
-bun run desktop:dev
-
-# VS Code extension
-bun run vscode:build && code --extensionDevelopmentPath="$(pwd)/packages/vscode"
-
-# Production build
-bun run build
-```
-
-## Before Submitting
-
-```bash
-bun run type-check   # Must pass
-bun run lint         # Must pass
-bun run build        # Must succeed
+npm test
 ```
 
 ## Code Style
 
-- Functional React components only
-- TypeScript strict mode - no `any` without justification
-- Use existing theme colors/typography - don't add new ones
-- Components must support light and dark themes
+- TypeScript for all code
+- ESLint for linting
+- Follow existing patterns in the codebase
 
 ## Pull Requests
 
-1. Fork and create a branch
-2. Make changes
-3. Run validation commands above
-4. Submit PR with clear description of what and why
+1. Create a feature branch
+2. Write tests for your changes
+3. Ensure all tests pass
+4. Update documentation if needed
+5. Submit PR with clear description
 
-## Project Structure
+## Test-Driven Development
 
-See [AGENTS.md](./AGENTS.md) for detailed architecture reference.
+We follow TDD:
 
-## Questions?
-
-Open an issue.
+1. Write tests first
+2. Implement functionality
+3. Refactor while keeping tests green
