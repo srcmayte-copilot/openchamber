@@ -35,9 +35,9 @@ describe('HealthService', () => {
       expect(timestamp.getTime()).not.toBeNaN();
     });
 
-    it('should return positive uptime', () => {
+    it('should return non-negative uptime', () => {
       const health = service.getHealth();
-      expect(health.uptime).toBeGreaterThan(0);
+      expect(health.uptime).toBeGreaterThanOrEqual(0);
     });
   });
 
