@@ -27,3 +27,18 @@ local-dev*
 *.sln
 *.sw?
 .opencode/plans/*
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Node modules
+node_modules/
+
+# Test coverage
+coverage/
+
+# Environment
+.env.local
+.env.*.local
